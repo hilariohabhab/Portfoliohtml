@@ -1,0 +1,496 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap");
+
+:root {
+  --fundo: #191919;
+  --branco: #ffffff;
+  --segundaCor: #f9004d;
+  --preto: #000000;
+  --rosaClaro: #ead3da;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  background-image: url("imagens/background.png");
+  background-size: cover;
+  background-position: center;
+  background-color: var(--fundo);
+}
+
+.container a {
+  transition: 0.5s;
+}
+
+.container a:hover {
+  border-radius: 10%;
+  color: var(--branco);
+  background-color: var(--segundaCor);
+
+  padding: 4px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+}
+
+.portfolio {
+  color: var(--branco);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.portfolio span {
+  color: var(--segundaCor);
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: var(--branco);
+}
+li a:hover {
+  color: var(--segundaCor);
+  transition: 0.5s;
+}
+
+.meu-nome {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+}
+
+h1 {
+  color: var(--branco);
+}
+h1 span {
+  color: var(--segundaCor);
+}
+
+.meu-nome h3 {
+  color: var(--branco);
+  font-size: 1em;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  background-color: var(--preto);
+  color: var(--branco);
+  padding: 60px 3%;
+}
+
+.minha-foto {
+  height: 400px;
+  border-radius: 100%;
+  border: 2px solid var(--segundaCor);
+  transition: 1.5s;
+}
+
+.minha-foto:hover {
+  transform: scale(1.1);
+}
+
+section div h2 {
+  padding: 10px;
+  margin-left: 30px;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+section div p {
+  padding: 10px;
+  margin-left: 30px;
+  color: var(--rosaClaro);
+}
+
+.contato {
+  height: 30px;
+  width: 150px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--segundaCor);
+  color: var(--branco);
+  font-size: 0.8em;
+  margin: 0 40px;
+  cursor: pointer;
+}
+
+.contato:hover {
+  background-color: var(--preto);
+  border: 3px solid var(--segundaCor);
+  transition: 0.5s;
+}
+
+.projetos {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  background-color: var(--fundo);
+}
+
+.projetos h2 {
+  color: var(--branco);
+  font-size: 40px;
+  font-weight: 500;
+  text-align: center;
+}
+.card {
+  background-color: var(--preto);
+  height: 400px;
+  width: 300px;
+  border-radius: 20px;
+  padding: 20px 35px;
+  text-align: center;
+  border: 1px solid var(--segundaCor);
+  transition: 0.5s;
+}
+
+.card:hover {
+  background-color: var(--fundo);
+}
+
+.card img {
+  height: 100px;
+}
+
+.card h5 {
+  color: var(--branco);
+  font-size: 20px;
+}
+
+.card p {
+  color: var(--rosaClaro);
+  margin: 20px;
+  font-size: 10px;
+  padding-bottom: 10%;
+}
+
+.card a {
+  background-color: var(--segundaCor);
+  color: var(--branco);
+  padding: 10px 10px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.card a:hover {
+  background-color: var(--preto);
+  border: 3px solid var(--segundaCor);
+}
+
+.card-projetos {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+footer {
+  background-color: var(--preto);
+  padding-top: 100px;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer h5 {
+  color: var(--branco);
+  font-size: 25px;
+}
+
+footer p {
+  color: var(--branco);
+  font-size: 14px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.social img {
+  max-height: 70%;
+  border-radius: 50%;
+}
+
+.social a {
+  background-color: var(--segundaCor);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.social a:hover {
+  transform: scale(1.2);
+}
+
+.social {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.popup {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(160, 62, 62, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+ 
+}
+
+.popup-content {
+  background-color: var(--segundaCor);
+  color: var(--branco);
+  padding: 20px;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+.active {
+  display: flex;
+}
+
+/* Estilos para dispositivos com largura menor que 768px (Smartphones) */
+@media screen and (max-width: 767px) {
+  .container {
+    height: auto;
+    padding-bottom: 60px;
+  }
+  
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+  
+  .portfolio {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+  
+  li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  section {
+    padding: 40px 3% 60px;
+  }
+  
+  .minha-foto {
+    height: 300px;
+    width: 300px;
+  }
+  
+  section div h2 {
+    margin-left: 0;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  section div p {
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  .contato {
+    margin: 20px 0;
+  }
+  
+  .card-projetos {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  footer {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+  
+  footer h5 {
+    font-size: 22px;
+  }
+  
+  footer p {
+    font-size: 12px;
+  }
+}
+
+/* Estilos para dispositivos com largura entre 768px e 1024px (Tablets - iPads) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    height: 100vh;
+    padding-bottom: 0;
+  }
+  
+  nav {
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 30px;
+  }
+  
+  .portfolio {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+  }
+  
+  li {
+    margin-right: 25px;
+    margin-bottom: 0;
+  }
+  
+  section {
+    padding: 60px 3%;
+  }
+  
+  .minha-foto {
+    height: 400px;
+    width: 400px;
+  }
+  
+  section div h2 {
+    margin-left: 30px;
+    font-size: 2rem;
+    text-align: left;
+  }
+  
+  section div p {
+    margin-left: 30px;
+    text-align: left;
+  }
+  
+  .contato {
+    margin: 0 40px;
+  }
+  
+  .card-projetos {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  footer {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+  
+  footer h5 {
+    font-size: 25px;
+  }
+  
+  footer p {
+    font-size: 14px;
+  }
+}
+
+/* Estilos para dispositivos com largura maior que 1024px (PCs e Notebooks) */
+
+  .container {
+    height: 100vh;
+    width: 100%;
+  }
+  
+  nav {
+    justify-content: space-between;
+    padding: 15px 30px;
+  }
+  
+  .portfolio {
+    font-size: 1.5rem;
+  }
+  
+  li {
+    margin-right: 25px;
+    margin-bottom: 0;
+  }
+  
+  section {
+    padding: 60px 3%;
+  }
+  
+  .minha-foto {
+    height: 400px;
+    width: 400px;
+  }
+  
+  section div h2 {
+    margin-left: 30px;
+    font-size: 2rem;
+    text-align: left;
+  }
+  
+  section div p {
+    margin-left: 30px;
+    text-align: left;
+  }
+  
+  .contato {
+    margin: 0 40px;
+  }
+  
+  .card-projetos {
+    justify-content: space-around;
+    gap: 40px;
+  }
+  
+  footer {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+  
+  footer h5 {
+    font-size: 25px;
+  }
+  
+  footer p {
+    font-size: 14px;
+  }
+
