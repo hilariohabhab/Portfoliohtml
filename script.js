@@ -1,23 +1,23 @@
-// Obtém todos os elementos de âncora com a classe "menu-link"
-const menuLinks = document.querySelectorAll(".menu-link");
 
-// Adiciona um evento de clique a cada elemento de âncora
+const menuLinks = document.querySelectorAll(".menu-link");
+const scrollToTopButton = document.getElementById("scrollToTopButton");
+const cookieBanner = document.getElementById("cookie-banner");
+const acceptCookiesButton = document.getElementById("accept-cookies");
+
+
 menuLinks.forEach((link) => {
   link.addEventListener("click", scrollToSection);
 });
 
-// Função para lidar com o deslizamento suave
 function scrollToSection(e) {
   e.preventDefault();
-  const targetId = this.getAttribute("href"); // Obtém o ID do destino da âncora
-  const targetSection = document.querySelector(targetId); // Obtém a seção de destino
+  const targetId = this.getAttribute("href");
+  const targetSection = document.querySelector(targetId); 
 
-  // Verifica se a seção de destino existe
   if (targetSection) {
-    // Calcula a posição do topo da seção de destino
+
     const targetPosition = targetSection.offsetTop;
 
-    // Desliza suavemente até a posição do topo da seção de destino
     window.scrollTo({
       top: targetPosition,
       behavior: "smooth",
@@ -25,24 +25,32 @@ function scrollToSection(e) {
   }
 }
 
-
-// Obtém o elemento do DOM
-let popup = document.getElementById("myPopup");
-let spanClosePopup = document.getElementsByClassName("close")[0];
-
-// Exibe o popup assim que a página carregar
-window.onload = function() {
-  popup.classList.remove("hidden");
-};
-
-// Evento de clique para fechar o popup
-spanClosePopup.onclick = function() {
-  popup.classList.add("hidden");
-};
-
-// Fecha o popup quando o usuário clica fora dele
-window.onclick = function(event) {
-  if (event.target == popup) {
-    popup.classList.add("hidden");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    scrollToTopButton.style.display = "block";
+  } else {
+    scrollToTopButton.style.display = "none";
   }
-};
+});
+
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+scrollToTopButton.addEventListener("click", scrollToTop);
+
+
+
+acceptCookiesButton.addEventListener("click", () => {
+
+  localStorage.setItem("cookiesAccepted", "true");
+  cookieBanner.style.display = "none";
+});
+
+if (localStorage.getItem("cookiesAccepted") === "true") {
+  cookieBanner.style.display = "none";
+}
