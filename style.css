@@ -74,6 +74,36 @@ li a:hover {
   transition: 0.5s;
 }
 
+/*! T A G ' S - S P A N */
+
+.frontag {
+  font-weight: bold;
+  color: var(--segundaCor);
+}
+.html {
+  color: #e17b15;
+  font-weight:500;
+}
+.csstag {
+  color: #4ca8af;
+  font-weight:500;
+}
+.javascipttag {
+  color: #e1d715;
+  font-weight:500;
+}
+.reactag {
+  color: #4c5caf;
+  font-weight:500;
+}
+.nodetag {
+  color: #4caf50;
+  font-weight:500;
+}
+.principaistag{
+text-decoration: underline;
+font-size: 16px;
+}
 /** Tags class && ID */
 .container {
   height: 100vh;
@@ -129,13 +159,13 @@ li a:hover {
 
 .contato {
   height: 30px;
-  width: 150px;
+  width: 180px;
   border: none;
   border-radius: 20px;
   background-color: var(--segundaCor);
   color: var(--branco);
-  font-size: 0.8em;
-  margin: 0 40px;
+  font-size: 1em;
+  margin: 24px 40px;
   cursor: pointer;
 }
 
@@ -174,17 +204,15 @@ li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.3s ease-in-out; 
+  transition: background-color 0.3s ease-in-out;
 }
-
 
 .scroll-to-top-button:hover {
   background-color: #d6003a;
 }
 
-
 .scroll-to-top-button i {
-  font-size: 1.8rem; 
+  font-size: 1.8rem;
 }
 
 /** Cards */
@@ -246,12 +274,10 @@ li a:hover {
 .social img {
   max-height: 70%;
   border-radius: 50%;
-
 }
 
-.gitHub img{
-  background-color:var(--fundo);
-
+.gitHub img {
+  background-color: var(--fundo);
 }
 
 /*? Social Midia-Footer */
@@ -277,12 +303,10 @@ li a:hover {
   gap: 20px;
 }
 
-
-
 footer {
   background-color: var(--preto);
-  padding-top: 100px;
-  padding-bottom: 120px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -467,7 +491,6 @@ footer p {
   }
 }
 
-
 @media screen and (max-width: 767px) {
   body {
     margin: 0;
@@ -488,12 +511,12 @@ footer p {
   .portfolio {
     margin-bottom: 15px;
     font-size: 1.2rem;
-    text-align: center; 
+    text-align: center;
   }
 
   li {
     margin: 5px 5px;
-    text-align: center; 
+    text-align: center;
   }
 
   section {
@@ -503,23 +526,24 @@ footer p {
   .minha-foto {
     height: 200px;
     width: 200px;
-    margin: 0 auto; 
+    margin: 0 auto;
   }
 
   .meu-nome {
-    position: relative; 
+    position: relative;
     top: auto;
     left: auto;
-    text-align: center; 
+    text-align: center;
   }
 
-  .meu-nome h1, h3{
+  .meu-nome h1,
+  h3 {
     display: none;
   }
 
-   .contato {
-    margin: 20px auto; 
-    text-align: center; 
+  .contato {
+    margin: 20px auto;
+    text-align: center;
   }
 
   .card-projetos {
@@ -546,7 +570,6 @@ footer p {
   }
 
   #cookie-banner {
-    font-size: 12px; 
+    font-size: 12px;
   }
 }
-
