@@ -1,56 +1,55 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const menuLinks = document.querySelectorAll(".menu-link");
+  const scrollToTopButton = document.getElementById("scrollToTopButton");
+  const cookieBanner = document.getElementById("cookie-banner");
+  const acceptCookiesButton = document.getElementById("accept-cookies");
 
-const menuLinks = document.querySelectorAll(".menu-link");
-const scrollToTopButton = document.getElementById("scrollToTopButton");
-const cookieBanner = document.getElementById("cookie-banner");
-const acceptCookiesButton = document.getElementById("accept-cookies");
+  
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", scrollToSection);
+  });
+
+  function scrollToSection(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href");
+    const targetSection = document.querySelector(targetId);
+
+    if (targetSection) {
+      const targetPosition = targetSection.offsetTop;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+    }
+  }
 
 
-menuLinks.forEach((link) => {
-  link.addEventListener("click", scrollToSection);
-});
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      scrollToTopButton.style.display = "block";
+    } else {
+      scrollToTopButton.style.display = "none";
+    }
+  });
 
-function scrollToSection(e) {
-  e.preventDefault();
-  const targetId = this.getAttribute("href");
-  const targetSection = document.querySelector(targetId); 
-
-  if (targetSection) {
-
-    const targetPosition = targetSection.offsetTop;
-
+  function scrollToTop() {
     window.scrollTo({
-      top: targetPosition,
+      top: 0,
       behavior: "smooth",
     });
   }
-}
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 100) {
-    scrollToTopButton.style.display = "block";
-  } else {
-    scrollToTopButton.style.display = "none";
-  }
-});
+  scrollToTopButton.addEventListener("click", scrollToTop);
 
-
-function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
+  // cookies
+  acceptCookiesButton.addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "true");
+    cookieBanner.style.display = "none";
   });
-}
 
-scrollToTopButton.addEventListener("click", scrollToTop);
+  if (localStorage.getItem("cookiesAccepted") === "true") {
+    cookieBanner.style.display = "none";
+  }
 
-
-
-acceptCookiesButton.addEventListener("click", () => {
-
-  localStorage.setItem("cookiesAccepted", "true");
-  cookieBanner.style.display = "none";
-});
-
-if (localStorage.getItem("cookiesAccepted") === "true") {
-  cookieBanner.style.display = "none";
-}
+})

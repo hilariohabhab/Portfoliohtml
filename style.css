@@ -17,7 +17,12 @@
   font-weight: 400;
 }
 
+
 /*! Tags gerais */
+body{
+  width: 100%;
+  height: 100vh;
+}
 section {
   display: flex;
   align-items: center;
@@ -269,6 +274,8 @@ font-size: 16px;
   margin-bottom: 50px;
 }
 
+
+
 /** F O O T E R **/
 
 .social img {
@@ -277,7 +284,7 @@ font-size: 16px;
 }
 
 .gitHub img {
-  background-color: var(--fundo);
+  background-color: var(--branco);
 }
 
 /*? Social Midia-Footer */
@@ -351,7 +358,6 @@ footer p {
   cursor: pointer;
 }
 
-/* Estilos para dispositivos com largura menor ou igual a 767px */
 @media screen and (max-width: 767px) {
   body {
     margin: 0;
@@ -423,7 +429,6 @@ footer p {
   }
 }
 
-/* Estilos para dispositivos com largura entre 768px e 1024px */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .container {
     height: 100vh;
